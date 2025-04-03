@@ -1,0 +1,19 @@
+body {
+     background-color: rgb(242, 242, 242);
+     color: white;
+    font-family: 'Times New Roman', Times, serif;
+
+.Navi {
+
+overflow: hidden;
+background-color: black;
+
+}
+.Navi a{
+float:right;
+color: rgb(249, 249, 249);
+text-align: center;
+padding: 30px 32px
+}
+
+}
