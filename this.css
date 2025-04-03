@@ -1,0 +1,39 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: rgb(4, 137, 108); 
+}
+
+.traffic-light {
+    width: 150px; 
+    height: 320px;
+    background-color: #0f0f0f; 
+    border-radius: 60px;
+    padding: 50px;
+    display: flex;
+    flex-direction:column;
+    justify-content:space-between;
+    align-items: center;
+}
+
+.light {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    opacity: 0.3;
+    transition: opacity 1s; 
+}
+
+.red {
+    background-color: red;
+}
+
+.yellow {
+    background-color: rgb(189, 189, 15);
+}
+
+.green {
+    background-color: green;
+}
