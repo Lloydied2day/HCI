@@ -1,10 +1,9 @@
-
-function toggleLight(state) {
-    const lightImage = document.getElementById('lightImage');
-    if (state === 'on') {
-        lightImage.src ='on.jpg';  
-    } else {
-        lightImage.src ='off.jpg'; 
+function turnOn() {
+    document.getElementById('bulbImage').style.display = 'block'; // Show the "on" bulb image
+    document.getElementById('offImage').style.display = 'none';  // Hide the "off" bulb image
 }
 
+function turnOff() {
+    document.getElementById('bulbImage').style.display = 'none';  // Hide the "on" bulb image
+    document.getElementById('offImage').style.display = 'block'; // Show the "off" bulb image
 }
