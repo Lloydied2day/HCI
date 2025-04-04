@@ -1,20 +1,21 @@
 <!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Navigation</title>
+    <title>Light Switch</title>
     <link rel="stylesheet" href="Light.css">
 </head>
-<html>
 <body>
 
-<button onclick="document.getElementById('myImage').src='on.jpg'">Turn on the light</button>
+<div class="container">
+    <button id="onButton" onclick="toggleLight('on')">On Lights</button>
+    <button id="offButton" onclick="toggleLight('off')">Off Lights</button>
 
-<img id="myImage" src="pic_bulboff.gif" style="width:100px">
-
-<button onclick="document.getElementById('myImage').src='off.jpg'">Turn off the light</button>
-
-<script src="Lightson.js"></script>
-
+    <div id="lightContainer" class="light-container">
+        <img id="lightImage" src="Traffic Lights/off.jpg" alt="Light" />
+    </div>
+</div>
+    <script src="Lightson.js"></script>
 </body>
 </html>

@@ -1,0 +1,48 @@
+/* Centering the container */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+
+/* Container for buttons and image */
+.container {
+    text-align: center;
+}
+
+/* Buttons */
+button {
+    background-color: #4CAF50; /* Green background */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 10px 5px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* Light container for image */
+.light-container {
+    margin-top: 20px;
+}
+
+/* Image styling */
+#lightImage {
+    max-width: 300px;
+    max-height: 300px;
+    display: block;
+    margin: 20px auto;
+}
