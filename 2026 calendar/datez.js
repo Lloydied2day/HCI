@@ -1,52 +1,67 @@
-const calendarContainer = document.getElementById('calendar');
 const monthNames = [
   "January", "February", "March", "April", "May", "June",
   "July", "August", "September", "October", "November", "December"
 ];
-const weekdays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
-function createMonth(month, year) {
-  const firstDay = new Date(year, month, 1).getDay();
-  const daysInMonth = new Date(year, month + 1, 0).getDate();
+const daysInMonth = (month, year) => new Date(year, month + 1, 0).getDate();
 
-  const monthDiv = document.createElement('div');
-  monthDiv.className = 'month';
+const renderCalendar = (year) => {
+  const container = document.getElementById("calendar-container");
+  for (let month = 0; month < 12; month++) {
+    const firstDay = new Date(year, month, 1).getDay();
+    const totalDays = daysInMonth(month, year);
 
-  const title = document.createElement('h2');
-  title.textContent = monthNames[month];
-  monthDiv.appendChild(title);
+    const monthDiv = document.createElement("div");
+    monthDiv.className = "month";
 
-  const weekdaysDiv = document.createElement('div');
-  weekdaysDiv.className = 'weekdays';
-  weekdays.forEach(day => {
-    const dayDiv = document.createElement('div');
-    dayDiv.textContent = day;
-    weekdaysDiv.appendChild(dayDiv);
-  });
-  monthDiv.appendChild(weekdaysDiv);
+    const title = document.createElement("h2");
+    title.textContent = monthNames[month];
+    monthDiv.appendChild(title);
 
-  const daysDiv = document.createElement('div');
-  daysDiv.className = 'days';
+    const weekdays = document.createElement("div");
+    weekdays.className = "weekdays";
+    ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"].forEach(day => {
+      const dayDiv = document.createElement("div");
+      dayDiv.textContent = day;
+      weekdays.appendChild(dayDiv);
+    });
+    monthDiv.appendChild(weekdays);
 
-  for (let i = 0; i < firstDay; i++) {
-    daysDiv.appendChild(document.createElement('div'));
+    const days = document.createElement("div");
+    days.className = "days";
+    for (let i = 0; i < firstDay; i++) {
+      const emptyDiv = document.createElement("div");
+      days.appendChild(emptyDiv);
+    }
+    for (let d = 1; d <= totalDays; d++) {
+      const dayDiv = document.createElement("div");
+      dayDiv.textContent = d;
+      days.appendChild(dayDiv);
+    }
+    monthDiv.appendChild(days);
+
+    container.appendChild(monthDiv);
+
+    // Add click effect
+    monthDiv.addEventListener("click", () => {
+      const allMonths = document.querySelectorAll(".month");
+      const isActive = monthDiv.classList.contains("active");
+
+      allMonths.forEach(m => {
+        m.classList.remove("active");
+        m.classList.remove("faded");
+      });
+
+      if (!isActive) {
+        monthDiv.classList.add("active");
+        allMonths.forEach(m => {
+          if (m !== monthDiv) {
+            m.classList.add("faded");
+          }
+        });
+      }
+    });
   }
+};
 
-  for (let i = 1; i <= daysInMonth; i++) {
-    const dayDiv = document.createElement('div');
-    dayDiv.textContent = i;
-    daysDiv.appendChild(dayDiv);
-  }
-
-  monthDiv.appendChild(daysDiv);
-  return monthDiv;
-}
-
-function generateCalendar(year) {
-  for (let i = 0; i < 12; i++) {
-    const month = createMonth(i, year);
-    calendarContainer.appendChild(month);
-  }
-}
-
-generateCalendar(2026);
+renderCalendar(2026);
