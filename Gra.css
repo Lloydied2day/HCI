@@ -1,0 +1,128 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #b3d9ff 0%, #e6f2ff 100%);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.container {
+    background-color: #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    width: 100%;
+    max-width: 800px;
+    text-align: center;
+    border-radius: 15px;
+    margin: 30px 0;
+}
+
+h2, p {
+    margin: 0 0 10px;
+    color: #004080;
+}
+
+.form-group {
+    background-color: #e1ecf7;
+    padding: 20px;
+    border-left: 5px solid #4a90e2;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.form-group label {
+    font-weight: bold;
+    color: #003366;
+}
+
+.form-group input {
+    padding: 10px;
+    border: 1px solid #99c2ff;
+    border-radius: 50px;
+    font-size: 16px;
+    width: 80%;
+    margin: 0 auto;
+}
+
+button {
+    padding: 12px 25px;
+    background-color: #4a90e2;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #357abd;
+}
+
+.output {
+    background-color: #2cb8f0;
+    padding: 20px;
+    border-left: 5px solid #4a90e2;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    width: 95%;
+    max-width: 800px;
+    text-align: center;
+}
+
+.output label {
+    font-weight: bold;
+    color: #006661;
+}
+
+.output input {
+    padding: 10px;
+    border: 1px solid #a4c2a5;
+    border-radius: 50px;
+    font-size: 16px;
+    width: 80%;
+    margin: 5px auto;
+}
+
+.grades-table {
+    background-color: #f0f8ff;
+    padding: 30px;
+    border-radius: 50px;
+    width: 93%;
+    max-width: 800px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.grades-table h3 {
+    color: #003d66;
+    font-size: 26px;
+    margin-bottom: 20px;
+}
+
+.grades-table table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 16px;
+}
+
+.grades-table th, .grades-table td {
+    border: 1px solid #aacbe8;
+    padding: 12px;
+    text-align: center;
+}
+
+.grades-table th {
+    background-color: #d6eaf8;
+    font-weight: bold;
+    color: #00264d;
+}
